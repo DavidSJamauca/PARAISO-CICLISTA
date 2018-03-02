@@ -1,0 +1,64 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table-bordered">
+
+				<!--div class="form-group">
+					<label for="">Codigo</label>
+					<select
+					class="form-control"
+					ng-change="vm.selectedParqueo()"
+					ng-model="vm.parqueo.codigoFicha">
+						<option  ng-value="item.codigoFicha" ng-repeat="item in vm.parqueo">{{item.codigoFicha}}</option>
+					</select>
+				</div-->
+					<h4 class="text-muted"><strong>Ingresar Codigo</strong></h4>
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="vm.parqueo.codigoFicha" placeholder="Ingrese su codigo">
+				</div>
+				<button class="btn btn-info col-md-12" ng-click="vm.ingresarCodigo()"> Buscar Codigo</button>
+				<div>
+					<p>Precio: {{vm.itemCodigo.precio}}</p>
+					<p>Horas: {{vm.itemCodigo.horas}}</p>
+					<p>Fecha: {{vm.itemCodigo.fecha}}</p>
+					<p>Matricula: {{vm.itemCodigo.matricula.matricula}}</p>
+					<p>Nombre: {{vm.itemCodigo.idCliente.nombre}}</p>
+				</div>
+		</div>
+	</div>
+</div>
+
+<br>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <h4 class="titleSalida text-center"><strong>Lista Servicio</strong> <i class=""></i><br class="visible-xs"><br class="visible-xs"><span class="pull-right ingreso hidden-xs"><strong>Ingresos Parqueadero</strong>
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>Precio</th>
+                <th>Hora</th>
+                <th>Fecha</th>
+                <th>Matricula</th>
+                <th>Estado</th>
+                <th>Cliente</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in vm.parqueo">
+                <td>{{item.precio}}</td>
+                <td>{{item.horas}}</td>
+                <td>{{item.fecha | date:"yy/MM/dd"}}</td>
+                <td>{{item.matricula.matricula}}</td>
+                <td>{{item.estado}}</td>
+                <td>{{item.idCliente.nombre}}</td>
+                <td>
+                  <button class="btn btn-info" ng-click="vm.actualizarEstado(item)">Retirar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
